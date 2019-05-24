@@ -1,10 +1,9 @@
 # dof-calculator-pwa
-
-
+> A tiny no-frills depth of field progressive web app for film cameras.
 
 ## Why?
 
-Because the Combination Meter on my 2005 Prius is on the fritz, and I need a speedometer until I can tear apart and repair the faulty caps. :-)
+Because this is just one of a series of utility PWA's I've had lying around that I use that might be useful to other folks.
 
 ## Dev
 
