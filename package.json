@@ -18,7 +18,7 @@
     "build:js": "yarn google-closure-compiler --js=./src/index.js --js_output_file=./dist/index.js --compilation_level=ADVANCED --jscomp_off=checkVars --language_out=ECMASCRIPT_2017",
     "build:sw": "yarn google-closure-compiler --js=./src/service-worker.js --js_output_file=./dist/service-worker.js --compilation_level=ADVANCED --jscomp_off=checkVars --allow_method_call_decomposing --language_out=ECMASCRIPT_2017",
     "build:inline:css": "sed -i -e '/<link rel=\"stylesheet\" href=\"index.css\">/{' -e 'a <style>' -e 'r ./dist/index.css' -e 'a </style>' -e 'd}' ./dist/index.html",
-    "build:inline:js":  "sed -i -e '/<script src=\"index.js\"><\\/script>/{' -e 'a <script>' -e 'r ./dist/index.js' -e 'a </script>' -e 'd}' ./dist/index.html",
+    "build:inline:js": "sed -i -e '/<script src=\"index.js\"><\\/script>/{' -e 'a <script>' -e 'r ./dist/index.js' -e 'a </script>' -e 'd}' ./dist/index.html",
     "build:minify": "yarn html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --removeAttributeQuotes --remove-tag-whitespace --removeOptionalTags --minify-css true --output ./dist/index.html ./dist/index.html",
     "build:smaller": "rm -rf ./dist/*.css && rm -rf ./dist/index.js",
     "dist": "yarn clean && yarn copy && yarn build:js && yarn build:sw && yarn build:inline:css && yarn build:inline:js && yarn build:minify && yarn build:smaller",
@@ -27,5 +27,9 @@
   "devDependencies": {
     "google-closure-compiler": "^20181125.0.1",
     "html-minifier": "^3.5.21"
+  },
+  "dependencies": {
+    "firebase-tools": "^6.10.0",
+    "global": "^4.3.2"
   }
 }

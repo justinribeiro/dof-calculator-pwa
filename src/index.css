@@ -41,6 +41,13 @@ header h1 {
   margin: 0;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+}
+
 #myKits {
   display: grid;
   grid-template-columns: 68% 15% 15%;
@@ -53,8 +60,8 @@ header h1 {
   grid-template-columns: 50% 50%;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  padding: 2em;
-  background-color: lightyellow;
+  padding: 1em;
+  background-color: hsl(60, 100%, 74%);
 }
 
 #settings {
