@@ -1,0 +1,150 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: radial-gradient(ellipse at center, #ffffff 0%,#b7b7b7 100%);
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  margin: 0;
+}
+
+body > div {
+  width: 100%;
+  padding: 0.5em;
+}
+
+header {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1em;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+header svg {
+  width: 85px;
+}
+
+header h1 {
+  font-family: 'Courgette', cursive;
+  margin: 0;
+}
+
+#myKits {
+  display: grid;
+  grid-template-columns: 68% 15% 15%;
+  gap: 5px;
+  width: 100%;
+}
+
+#addKit {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  padding: 2em;
+  background-color: lightyellow;
+}
+
+#settings {
+  display: grid;
+  grid-template-columns: 35% 32% 30%;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+#calculations {
+  text-align: center;
+}
+
+#dofCalcs {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+
+#hfCalcs {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  border-top: 1px solid #ccc;
+  margin-top: 1em;
+}
+
+label, #calculations h3 {
+  font-family: 'Courgette', cursive;
+  display: block;
+  padding-left: 4px;
+}
+
+input, select {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 1.6em;
+  width: 100%;
+}
+
+#calculations h3 {
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.result {
+  font-size: 1.6em;
+  font-family: monospace;
+}
+
+button {
+  padding: 0.5em;
+  font-size: 1.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+
+#addNewKit {
+  background-color: hsl(69, 85%, 89%);
+}
+
+#removeKit {
+  background-color: hsl(0, 85%, 89%);
+}
+
+#addKitName {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+#addKitActions {
+  grid-row-start: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+@media (min-width: 1024px) {
+  body {
+    width: 600px;
+    margin: auto;
+  }
+}
+
+.hidden {
+  display: none !important;
+}

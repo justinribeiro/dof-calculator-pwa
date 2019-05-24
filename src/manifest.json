@@ -1,0 +1,14 @@
+{
+  "name": "Depth Of Field Calculator",
+  "short_name": "DoF Calc",
+  "description": "A tiny no-frills depth of field progressive web app for film cameras.",
+  "start_url": "/",
+  "theme_color": "#f1f1f1",
+  "background_color": "#f1f1f1",
+  "icons": [{
+    "src": "/images/viewcamera.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "display": "standalone"
+}

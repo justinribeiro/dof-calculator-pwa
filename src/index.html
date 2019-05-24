@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depth of Field Calculator</title>
+  <meta name="description" content="A tiny no-frills depth of field progressive web app for film cameras.">
+  <meta name="theme-color" content="#f1f1f1">
+  <link rel="icon" href="/images/viewcamera.png">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css?family=Courgette&display=optional" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="#303c42" d="M469.3 362.7c2.1 0 4.2-.6 6-1.8l32-21.3c3-2 4.7-5.3 4.7-8.9V181.4c0-3.6-1.8-7-4.8-9l-32-21.3a10.6 10.6 0 0 0-11.8 0L448 161.4V160c0-3.5-1.8-6.9-4.8-8.8l-32-21.4a10.6 10.6 0 0 0-11.8 0L384 140.1v-1.4c0-3.6-1.8-6.9-4.8-8.9l-32-21.3a10.6 10.6 0 0 0-11.8 0L320 118.8v-1.4c0-3.6-1.8-7-4.8-9l-32-21.3a10.6 10.6 0 0 0-11.8 0L256 97.4v-1.3c0-3.6-1.8-7-4.8-9l-32-21.3a10.6 10.6 0 0 0-11.8 0L192 76.1v-1.4c0-3.6-1.8-6.9-4.8-8.9l-32-21.3a10.6 10.6 0 0 0-11.8 0L128 54.8V32c0-5.9-4.8-10.7-10.7-10.7h-32V10.7c0-6-4.7-10.7-10.6-10.7H53.3c-5.9 0-10.6 4.8-10.6 10.7v10.6h-32C4.7 21.3 0 26.1 0 32v469.3c0 6 4.8 10.7 10.7 10.7h490.6c6 0 10.7-4.8 10.7-10.7v-42.6c0-6-4.8-10.7-10.7-10.7h-50.8l18.3-85.5.5.2zM428.7 448H184.6l2.6-1.8c3-2 4.8-5.3 4.8-8.8v-1.5l15.4 10.3a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-8.9v-1.4l15.4 10.3a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-8.9v-1.4l15.4 10.3a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-9V372l15.4 10.2a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-8.8v-1.5l1.4 1-20.7 96.4z"/><g fill="#800000"><path d="M469.3 172.8l21.4 14.3v138l-16.1 10.6 5.2-24.1a10.7 10.7 0 1 0-20.9-4.5l-4.7 22-6.2-4V187l21.3-14.3zM405.3 151.5l21.4 14.2v180.6l-21.4 14.3-21.3-14.3V165.7z"/></g><path fill="#fff" d="M405.3 151.5l21.4 14.2v180.6l-21.4 14.3z" opacity=".2"/><path fill="#800000" d="M341.3 130.2l21.4 14.2v223.3l-21.4 14.2-21.3-14.2V144.4z"/><path fill="#fff" d="M341.3 130.2l21.4 14.2v223.3l-21.4 14.2z" opacity=".2"/><path fill="#800000" d="M277.3 108.8l21.4 14.3V389l-21.4 14.2L256 389V123.1z"/><path fill="#fff" d="M277.3 108.8l21.4 14.3V389l-21.4 14.2z" opacity=".2"/><path fill="#800000" d="M213.3 87.5l21.4 14.3v308.5l-21.4 14.2-21.3-14.2V101.8z"/><path fill="#fff" d="M213.3 87.5l21.4 14.3v308.5l-21.4 14.2z" opacity=".2"/><path fill="#800000" d="M149.3 66.2l21.4 14.2v351.3l-21.4 14.2-21.3-14.2V80.4z"/><path fill="#fff" d="M149.3 445.9V66.2l21.4 14.2v351.2z" opacity=".2"/><path fill="#9e5f2c" d="M21.3 42.7h85.3V448H21.3z"/><path d="M85.3 42.7v341.5c0 23.5-19 42.5-42.4 42.5H21.3V448h85.4V42.7H85.3z" opacity=".1"/><path fill="#9e5f2c" d="M490.7 490.7H21.3v-21.4h469.4z"/><circle cx="64" cy="85.3" r="21.3" fill="#303c42"/><path fill="#fff" d="M471.6 299c5.7 1.1 9.4 6.8 8.2 12.6l-5.2 24.1 16-10.7V187l-21.3-14.2v126l2.3.1z" opacity=".2"/><linearGradient id="a" x1="-50.1" x2="-21.9" y1="637.8" y2="624.7" gradientTransform="matrix(21.3333 0 0 -21.3333 996.3 13791.7)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity=".2"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><path fill="url(#a)" d="M469.3 362.7c2.1 0 4.2-.6 6-1.8l32-21.3c3-2 4.7-5.3 4.7-8.9V181.4c0-3.6-1.8-7-4.8-9l-32-21.3a10.6 10.6 0 0 0-11.8 0L448 161.4V160c0-3.5-1.8-6.9-4.8-8.8l-32-21.4a10.6 10.6 0 0 0-11.8 0L384 140.1v-1.4c0-3.6-1.8-6.9-4.8-8.9l-32-21.3a10.6 10.6 0 0 0-11.8 0L320 118.8v-1.4c0-3.6-1.8-7-4.8-9l-32-21.3a10.6 10.6 0 0 0-11.8 0L256 97.4v-1.3c0-3.6-1.8-7-4.8-9l-32-21.3a10.6 10.6 0 0 0-11.8 0L192 76.1v-1.4c0-3.6-1.8-6.9-4.8-8.9l-32-21.3a10.6 10.6 0 0 0-11.8 0L128 54.8V32c0-5.9-4.8-10.7-10.7-10.7h-32V10.7c0-6-4.7-10.7-10.6-10.7H53.3c-5.9 0-10.6 4.8-10.6 10.7v10.6h-32C4.7 21.3 0 26.1 0 32v469.3c0 6 4.8 10.7 10.7 10.7h490.6c6 0 10.7-4.8 10.7-10.7v-42.6c0-6-4.8-10.7-10.7-10.7h-50.8l18.3-85.5.5.2zM428.7 448H184.6l2.6-1.8c3-2 4.8-5.3 4.8-8.8v-1.5l15.4 10.3a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-8.9v-1.4l15.4 10.3a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-8.9v-1.4l15.4 10.3a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-9V372l15.4 10.2a10.6 10.6 0 0 0 11.8 0l32-21.3c3-2 4.8-5.3 4.8-8.8v-1.5l1.4 1-20.7 96.4z"/></svg>
+    </div>
+    <div>
+      <h1>Depth of Field<br>Calculator</h1>
+    </div>
+  </header>
+  <div id="myKits">
+    <select id="kits"></select>
+    <button aria-label="Add new lens/film kit" id="addNewKit">➕</button>
+    <button aria-label="Remove selected lens/film kit" id="removeKit">❌</button>
+  </div>
+  <form id="addKit" class="hidden">
+    <div>
+      <label for="format">Film Format</label>
+      <select id="format" name="format">
+        <option>35mm</option>
+        <option>645</option>
+        <option>6x6</option>
+        <option>6x7</option>
+        <option>6x9</option>
+        <option>4x5</option>
+        <option>5x7</option>
+        <option>8x10</option>
+        <option>11x14</option>
+      </select>
+    </div>
+    <div>
+      <label for="lensLength">Lens Length (mm)</label>
+      <input type="number" name="lens" id="lensLength">
+    </div>
+    <div id="addKitName">
+      <label for="kitName">Kit Name (optional)</label>
+      <input type="text" name="name" id="kitName">
+    </div>
+    <div id="addKitActions">
+      <button type="button" id="saveKit">Save</button>
+      <button id="discardKit">Discard</button>
+    </div>
+  </form>
+  <div id="settings">
+    <div>
+      <label for="subjectDistance">subject distance</label>
+      <input id="subjectDistance" type="number">
+    </div>
+    <div>
+      <label for="unit">unit</label>
+      <select id="unit">
+        <option>meters</option>
+        <option>feet</option>
+      </select>
+    </div>
+    <div>
+      <label for="aperture">f/stop</label>
+      <select id="aperture">
+        <option>1.4</option>
+        <option>2.0</option>
+        <option>2.8</option>
+        <option>4.0</option>
+        <option>5.6</option>
+        <option>8.0</option>
+        <option>11.0</option>
+        <option>16.0</option>
+        <option>22.0</option>
+        <option>45.0</option>
+        <option>64.0</option>
+        <option>96.0</option>
+        <option>128.0</option>
+        <option>256.0</option>
+      </select>
+    </div>
+  </div>
+  <div id="calculations">
+    <div id="dofCalcs">
+      <div>
+        <h3>Near Sharpness</h3>
+        <div class="result" id="calculationsNearSharp">0m </div>
+      </div>
+      <div>
+        <h3>Far Sharpness</h3>
+        <div class="result" id="calculationsFarSharp">0 m</div>
+      </div>
+      <div>
+        <h3>Depth of Field</h3>
+        <div class="result" id="calculationsDof">0 m</div>
+      </div>
+    </div>
+    <div id="hfCalcs">
+      <div>
+        <h3>Hyperfocal Distance</h3>
+        <div class="result" id="calculationsHyperfocal">0 m</div>
+      </div>
+      <div>
+      <h3>DOF @ Hyperfocal</h3>
+        <div class="result" id="calculationsDofHyperfocal">0 m</div>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
