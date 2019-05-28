@@ -3,6 +3,7 @@
 /**
  * Based on a 5 lines/mm
  * CoC = 1 / (lines/mm * (diagonal^8x10 print / diagonal^filmFormat))
+ * @enum {number}
  */
 const circleOfConfusionForFormats = {
   '35mm': 0.026,
@@ -18,11 +19,19 @@ const circleOfConfusionForFormats = {
   '11x14': 0.25
 };
 
+/**
+ * @enum {number}
+ * @nocollapse
+ */
 const conversionsOfUnits = {
   feet: 304.8,
   meters: 1000,
 }
 
+/**
+ * @enum {string}
+ * @nocollapse
+ */
 const strings = {
   feet: "ft",
   meters: "m",
@@ -97,11 +106,6 @@ const addKitToSelectList = (kit) => {
   appOpts.dom.kitsSelect.add(option, null);
 }
 
-const toggleReadoutButtons = () => {
-  appOpts.dom.showKmh.classList.toggle('selected');
-  appOpts.dom.showMph.classList.toggle('selected');
-};
-
 const hyperfocalDistance = (focalLength, aperture, circleOfConfusion) => {
   return (focalLength * focalLength) / (aperture * circleOfConfusion);
 }
@@ -124,15 +128,15 @@ const calculate = () => {
   const convertUnit = conversionsOfUnits[appOpts.dom.convertUnits.selectedOptions[0].value];
   const convertString = strings[appOpts.dom.convertUnits.selectedOptions[0].value];
 
-  const whichKit = appOpts.kits.find((item) => item.id == appOpts.dom.kitsSelect.selectedOptions[0].value);
-  const circleOfConfusion = circleOfConfusionForFormats[whichKit.format];
+  const {lens, format} = appOpts.kits.find((item) => item.id == appOpts.dom.kitsSelect.selectedOptions[0].value);
+  const circleOfConfusion = circleOfConfusionForFormats[format];
 
   // Convert the target to millimeters
   const subjectDistanceMm = subjectDistance * convertUnit;
 
-  const _hyperfocalDistance = hyperfocalDistance(whichKit.lens, aperture, circleOfConfusion);
-  const _nearPointFocusDistance = nearPointFocusDistance(_hyperfocalDistance, subjectDistanceMm, whichKit.lens);
-  const _farPointFocusDistance = farPointFocusDistance(_hyperfocalDistance, subjectDistanceMm, whichKit.lens);
+  const _hyperfocalDistance = hyperfocalDistance(lens, aperture, circleOfConfusion);
+  const _nearPointFocusDistance = nearPointFocusDistance(_hyperfocalDistance, subjectDistanceMm, lens);
+  const _farPointFocusDistance = farPointFocusDistance(_hyperfocalDistance, subjectDistanceMm, lens);
   const _totalDepthOfField = totalDepthOfField(_farPointFocusDistance, _nearPointFocusDistance);
 
   appOpts.dom.calculations.nearSharp.textContent = `${Number.parseFloat(_nearPointFocusDistance/convertUnit).toFixed(2)}${convertString}`;
