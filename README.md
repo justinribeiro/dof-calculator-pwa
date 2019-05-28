@@ -22,14 +22,18 @@ $ yarn dist
 
 ## FAQ
 
-1. How does this calculate depth of field?
+> 1. _How does this calculate depth of field?_
+
 This is a pretty basic calc that you can find on the likes of [Wikipedia](https://en.wikipedia.org/wiki/Depth_of_field) or any of the many DoF calculators out there. This is not a lensmaker calculation (which is more involved).
 
-2. How does this calculate circle of confusion?
+> 2. _How does this calculate circle of confusion?_
+
 Via: `CoC = 1 / (lines/mm * (diagonal^8x10 print / diagonal^filmFormat))`, where lines/mm is 5.
 
-3. Why does this use 5 lines per millimeter as the basis for circle of confusion calculation?
+> 3. _Why does this use 5 lines per millimeter as the basis for circle of confusion calculation?_
+
 Personal preference.
 
-4. Why doesn't this include tilt degree?
+> 4. _Why doesn't this include tilt degree?_
+
 If I'm using tilt/swing, I've got a loupe on the ground glass. I don't find the calculation for Scheimpflug wedge particularly useful in the field.
