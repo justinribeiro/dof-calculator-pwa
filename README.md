@@ -1,7 +1,7 @@
 # dof-calculator-pwa
 > A tiny no-frills depth of field progressive web app for film cameras.
 
-![dof-calculator pwa run_(Nexus 5X)](https://user-images.githubusercontent.com/643503/58513007-57fd5680-8153-11e9-950b-36717c10a549.png)
+![dof-calculator pwa run_(Nexus 5X) __size](https://user-images.githubusercontent.com/643503/58516939-85033680-815e-11e9-9ff7-67d5f1a46db1.png)
 
 ## Why?
 
